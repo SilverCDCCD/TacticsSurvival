@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://b60hi6qyak511"]
+
+[ext_resource type="PackedScene" uid="uid://b7hv6dppxnesy" path="res://Scenes/assets/Tiles/grass_tile.tscn" id="1_0ense"]
+[ext_resource type="PackedScene" uid="uid://bffqlkx5ojm7t" path="res://Scenes/assets/Tiles/ground_tile.tscn" id="2_ti8uv"]
+[ext_resource type="PackedScene" uid="uid://cm6ue6td62jem" path="res://Scenes/assets/Tiles/stone_tile.tscn" id="3_4sknr"]
+[ext_resource type="PackedScene" uid="uid://bvcchomxlnclf" path="res://Scenes/assets/Tiles/water_tile.tscn" id="4_ktadm"]
+
+[node name="Tiles" type="Node3D"]
+
+[node name="GrassTile" parent="." instance=ExtResource("1_0ense")]
+
+[node name="GroundTile" parent="." instance=ExtResource("2_ti8uv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+
+[node name="StoneTile" parent="." instance=ExtResource("3_4sknr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
+
+[node name="WaterTile" parent="." instance=ExtResource("4_ktadm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 1.2)

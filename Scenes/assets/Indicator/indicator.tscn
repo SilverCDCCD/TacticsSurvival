@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bouttiat0colf"]
+
+[ext_resource type="Script" path="res://Scripts/indicator.gd" id="1_fuvbg"]
+[ext_resource type="Shader" path="res://Scenes/assets/Indicator/indicator.gdshader" id="1_gx3b5"]
+[ext_resource type="Script" path="res://Scripts/indicator_mover.gd" id="3_jxtcm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5uvy"]
+render_priority = 0
+shader = ExtResource("1_gx3b5")
+shader_parameter/brightness = 1.0
+shader_parameter/color = Vector3(1, 1, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8r53e"]
+
+[node name="Indicator" type="Area3D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_fuvbg")
+
+[node name="IndicatorMesh" type="CSGBox3D" parent="."]
+material = SubResource("ShaderMaterial_p5uvy")
+
+[node name="IndicatorCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8r53e")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -2)
+collision_mask = 7
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0.537255, 0, 1, 1)
+debug_shape_thickness = 3
+
+[node name="IndicatorMover" type="Node3D" parent="."]
+script = ExtResource("3_jxtcm")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw3sboyuitvqc"]
+
+[ext_resource type="Script" path="res://Scripts/test_ui.gd" id="1_sh5ql"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qaus2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sh5ql")
+
+[node name="HighlightLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 122.0
+offset_bottom = 28.0
+text = "Highlighted: N/A"
+label_settings = SubResource("LabelSettings_qaus2")
+
+[node name="SelectionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 30.0
+offset_right = 92.0
+offset_bottom = 58.0
+text = "Selected: N/A"
+label_settings = SubResource("LabelSettings_qaus2")
